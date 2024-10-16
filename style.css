@@ -17,6 +17,10 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+  font-size: 2.8em;
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -104,7 +108,6 @@ body {
 
 .section1 h1 {
   margin-bottom: 20px;
-  font-size: 2.8em;
 }
 
 .section1 p {
@@ -117,7 +120,8 @@ body {
   justify-content: space-between;
 }
 
-.section1 .text-l, .section1 .text-r {
+.section1 .text-l,
+.section1 .text-r {
   width: 45%;
 }
 
@@ -125,7 +129,7 @@ body {
   margin-bottom: 10px;
 }
 
-.section1-wrap .right-down{
+.section1-wrap .right-down {
   width: 50%;
 }
 
@@ -133,6 +137,47 @@ body {
   width: 100%;
 }
 
+.section2 {
+  padding: 82px 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section2 h1 {
+  max-width: 852px;
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.section2 .card-wrap {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.section2 .card-wrap .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  text-align: center;
+  padding: 60px 30px;
+  border-radius: 25px;
+  box-shadow:  12px 12px 24px #d3d2d9,
+             -12px -12px 24px #ffffff;
+}
+
+.section2 .card-wrap .card img {
+  width: 160px;
+  margin-bottom: 32px;
+}
+
+.section2 .card-wrap .card h2 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
 
 .footer {
   display: flex;
