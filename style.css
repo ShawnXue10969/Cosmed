@@ -85,7 +85,7 @@ body {
 }
 
 .section1 {
-  padding: 70px 47px;
+  padding: 82px 68px;
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -94,6 +94,7 @@ body {
 .section1-wrap {
   display: flex;
   align-items: center;
+  max-width: 1440px;
 }
 
 .section1-wrap .left-up {
@@ -113,6 +114,11 @@ body {
 .section1 .text-wrap {
   margin-top: 20px;
   display: flex;
+  justify-content: space-between;
+}
+
+.section1 .text-l, .section1 .text-r {
+  width: 45%;
 }
 
 .section1 h3 {
