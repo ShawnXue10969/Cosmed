@@ -163,15 +163,15 @@ h1 {
   align-items: center;
   width: 320px;
   text-align: center;
-  padding: 60px 30px;
-  border-radius: 25px;
-  box-shadow:  12px 12px 24px #d3d2d9,
-             -12px -12px 24px #ffffff;
+  padding: 80px 30px;
+  border-radius: 35px;
+  box-shadow:  18px 18px 36px #d3d2d9,
+             -18px -18px 36px #ffffff;
 }
 
 .section2 .card-wrap .card img {
   width: 160px;
-  margin-bottom: 32px;
+  margin-bottom: 46px;
 }
 
 .section2 .card-wrap .card h2 {
