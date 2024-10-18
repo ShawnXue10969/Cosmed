@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cosmed HairSkin Solution</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="navbar">
@@ -65,9 +66,34 @@
         </div>
         <div class="card">
           <img src="images/mesotherapy.png" alt="" />
-          <h2>Unlock your true beauty potential with our personalized approach.</h2>
+          <h2>
+            Unlock your true beauty potential with our personalized approach.
+          </h2>
           <p>Experience the power of advanced laser technology.</p>
         </div>
+      </div>
+    </div>
+    <div class="chatbot-toggler">
+      <img src="images/message.svg" alt="" />
+      <img src="images/xmark.svg" alt="" />
+    </div>
+    <div class="chatbot">
+      <header>
+        <h2>Cosmed Assistant</h2>
+        <img class="close-btn" src="images/xmark-d.svg" />
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <img src="images/cosmedlogo2.png" />
+          <p>
+            Hi there! <br />
+            How can I help you today?
+          </p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." required></textarea>
+        <img id="send-btn" src="images/send.svg" />
       </div>
     </div>
     <div class="footer">
