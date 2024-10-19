@@ -38,9 +38,10 @@ fetch("./answers.json")
         let score = 0;
 
         for (const keyword of keywords) {
-          const regex = new RegExp(keyword, "gi"); // Case-insensitive, global match
-          if (regex.test(question)) {
-            score++;
+          const regex = new RegExp(`\\b${keyword}\\b`, "gi"); // Word boundary matching
+          const matches = question.match(regex);
+          if (matches) {
+            score += matches.length; // Add the number of matches
           }
         }
 

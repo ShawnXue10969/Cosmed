@@ -212,6 +212,7 @@ h1 {
 .chatbot-toggler img {
   width: 22px;
   position: absolute;
+  user-select: none;
 }
 
 .show-chatbot .chatbot-toggler img:first-child,
@@ -266,6 +267,7 @@ h1 {
   transform: translateY(-50%);
   margin: 0;
   display: none;
+  user-select: none;
 }
 
 .chatbot img {
@@ -373,6 +375,6 @@ h1 {
   }
 
   .chatbot .chatbox {
-    height: 90%;
+    height: 72%;
   }
 }
