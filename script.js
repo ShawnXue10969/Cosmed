@@ -4,50 +4,82 @@ const chatBox = document.querySelector(".chatbox");
 const chatToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
 
-let userMessage;
+fetch("./answers.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let userMessage;
 
-const createChatLi = (message, className) => {
-  const chatLi = document.createElement("Li");
-  chatLi.classList.add("chat", className);
-  let chatContent =
-    className === "outgoing"
-      ? `<p></p>`
-      : `<img src="images/cosmedlogo2.png" /><p></p>`;
-  chatLi.innerHTML = chatContent;
-  chatLi.querySelector('p').textContent = message;
-  return chatLi;
-};
+    const createChatLi = (message, className) => {
+      const chatLi = document.createElement("Li");
+      chatLi.classList.add("chat", className);
+      let chatContent =
+        className === "outgoing"
+          ? `<p></p>`
+          : `<img src="images/cosmedlogo2.png" /><p></p>`;
+      chatLi.innerHTML = chatContent;
+      chatLi.querySelector("p").textContent = message;
+      return chatLi;
+    };
 
-const generateResponse = (incomingChatLi) => {
-  const messageElement = incomingChatLi.querySelector("p");
+    const generateResponse = (incomingChatLi, userMessage) => {
+      const messageElement = incomingChatLi.querySelector("p");
 
-  setTimeout(() => {
-    messageElement.textContent = "This is a fake response";
-  }, 900);
-};
+      setTimeout(() => {
+        messageElement.textContent = findAnswer(userMessage);
+      }, 900);
+    };
 
-const handleChat = () => {
-  userMessage = chatInput.value.trim();
-  if (!userMessage) return;
+    const findAnswer = (question) => {
+      let bestMatch = null;
+      let bestScore = 0;
 
-  chatBox.appendChild(createChatLi(userMessage, "outgoing"));
-  chatInput.value = "";
-  chatBox.scrollTop = chatBox.scrollHeight;
+      for (const category in data) {
+        const keywords = data[category].keywords;
+        let score = 0;
 
-  setTimeout(() => {
-    const incomingChatLi = createChatLi("Thinking...", "incoming");
-    chatBox.appendChild(incomingChatLi);
-    generateResponse(incomingChatLi);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }, 400);
-};
+        for (const keyword of keywords) {
+          const regex = new RegExp(keyword, "gi"); // Case-insensitive, global match
+          if (regex.test(question)) {
+            score++;
+          }
+        }
 
-chatToggler.addEventListener("click", () => document.body.classList.toggle('show-chatbot'));
-closeBtn.addEventListener("click", () => document.body.classList.remove('show-chatbot'));
-sendChatBtn.addEventListener("click", handleChat);
-chatInput.addEventListener("keypress", (e) => {
-  if (e.key == "Enter") {
-    e.preventDefault();
-    handleChat();
-  }
-});
+        if (score > bestScore) {
+          bestScore = score;
+          bestMatch = data[category].answer;
+        }
+      }
+
+      return bestMatch || "I don't understand your question. Please try again.";
+    };
+
+    const handleChat = () => {
+      userMessage = chatInput.value.trim();
+      if (!userMessage) return;
+
+      chatBox.appendChild(createChatLi(userMessage, "outgoing"));
+      chatInput.value = "";
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      setTimeout(() => {
+        const incomingChatLi = createChatLi("Thinking...", "incoming");
+        chatBox.appendChild(incomingChatLi);
+        generateResponse(incomingChatLi, userMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 400);
+    };
+
+    chatToggler.addEventListener("click", () =>
+      document.body.classList.toggle("show-chatbot")
+    );
+    closeBtn.addEventListener("click", () =>
+      document.body.classList.remove("show-chatbot")
+    );
+    sendChatBtn.addEventListener("click", handleChat);
+    chatInput.addEventListener("keypress", (e) => {
+      if (e.key == "Enter") {
+        e.preventDefault();
+        handleChat();
+      }
+    });
+  });

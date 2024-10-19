@@ -1,0 +1,10 @@
+{
+  "skin": {
+    "keywords": ["skin", "acne", "wrinkles", "dry", "sensitive", "scar"],
+    "answer": "For skin concerns, we offer a range of treatments including facials, chemical peels, and microdermabrasion.  Tell me more about your specific concern."
+  },
+  "hair": {
+    "keywords": ["hair", "loss", "thinning", "dandruff", "growth", "scalp"],
+    "answer": "We provide hair loss consultations, treatments, and hair care product recommendations.  What are your hair goals?"
+  }
+}
