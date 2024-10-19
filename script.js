@@ -26,6 +26,7 @@ fetch("./answers.json")
 
       setTimeout(() => {
         messageElement.textContent = findAnswer(userMessage);
+        chatBox.scrollTop = chatBox.scrollHeight;
       }, 900);
     };
 
