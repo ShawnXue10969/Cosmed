@@ -12,6 +12,15 @@
   padding: 0;
 }
 
+img {
+  user-select: none;
+}
+
+button {
+  user-select: none;
+  cursor: pointer;
+}
+
 body {
   background-color: var(--light);
   color: var(--dark);
