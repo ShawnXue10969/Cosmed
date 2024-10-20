@@ -243,10 +243,16 @@ h1 {
   font-size: .9em;
 }
 
-.wave:nth-child(2),
-.wave:nth-child(3) {
+.playing:first-child .wave:nth-child(2),
+.playing:first-child .wave:nth-child(3) {
   top: 210px;
   left: -120px;
+}
+
+.playing:last-child .wave:nth-child(2),
+.playing:last-child .wave:nth-child(3) {
+  top: 120px;
+  left: -210px;
 }
 
 .playing .wave {
@@ -272,8 +278,12 @@ h1 {
   color: var(--light-second);
 }
 
-.playing:nth-child(2) .wave {
+.playing:last-child .wave {
   background: linear-gradient(744deg, #10f2f6, #95D2B3 60%, #a3ff40);
+  left: 0;
+  top: 0;
+  margin-left: -45%;
+  margin-top: -80%;
 }
 
 .playing .wave:nth-child(2) {
