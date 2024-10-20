@@ -1,7 +1,7 @@
 :root {
   --dark: #1d1d20;
   --light: #f8f7ff;
-  --light-second: #eeeef4;
+  --light-second: #f0f0f8;
   --iris: #6643b5;
   --vista-blue: #8594e4;
   --celadon: #95d2b3;
@@ -98,29 +98,49 @@ h1 {
   color: var(--light);
 }
 
-.section1 {
-  padding: 82px 68px;
+.section1,
+.section3,
+.section4 {
+  padding: 96px 78px;
   display: flex;
   justify-content: center;
   overflow: hidden;
+  background-color: var(--light-second);
 }
 
-.section1-wrap {
+.section4 {
+  background-color: var(--light);
+}
+
+.section1-wrap,
+.section3-wrap,
+.section4-wrap {
   display: flex;
   align-items: center;
   max-width: 1440px;
 }
 
-.section1-wrap .left-up {
+.section1-wrap .left-up,
+.section3-wrap .right-down,
+.section4-wrap .left-up {
   padding-right: 47px;
   width: calc(50% - 50px);
 }
 
-.section1 h1 {
+.section3-wrap .right-down {
+  padding-left: 47px;
+  padding-right: 0;
+}
+
+.section1 h1,
+.section3 h1,
+.section4 h1 {
   margin-bottom: 20px;
 }
 
-.section1 p {
+.section1 p,
+.section3 p,
+.section4 p {
   font-size: 1.1em;
 }
 
@@ -139,16 +159,19 @@ h1 {
   margin-bottom: 10px;
 }
 
-.section1-wrap .right-down {
+.section1-wrap .right-down,
+.section3-wrap .left-up,
+.section4-wrap .right-down {
   width: 50%;
 }
 
-.section1-wrap .right-down img {
+.section1-wrap .right-down img,
+.section3-wrap .left-up img {
   width: 100%;
 }
 
 .section2 {
-  padding: 82px 68px;
+  padding: 96px 78px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,6 +197,9 @@ h1 {
   width: 320px;
   text-align: center;
   padding: 80px 30px;
+}
+
+.neu-card {
   border-radius: 35px;
   box-shadow: 18px 18px 36px #d3d2d9, -18px -18px 36px #ffffff;
 }
@@ -186,6 +212,94 @@ h1 {
 .section2 .card-wrap .card h2 {
   font-size: 1.2em;
   margin-bottom: 20px;
+}
+
+.section4 .right-down {
+  display: flex;
+  flex-direction: column;
+  gap: 62px;
+}
+
+.section4 .right-down .card {
+  position: relative;
+  padding: 24px 52px;
+  background: transparent;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.section4 .right-down .card h1 {
+  position: relative;
+  margin-bottom: 12px;
+  font-size: 4.2em;
+}
+
+.section4 .right-down .card h3 {
+  position: relative;
+}
+
+.section4 .right-down .card p {
+  position: relative;
+  font-size: .9em;
+}
+
+.wave:nth-child(2),
+.wave:nth-child(3) {
+  top: 210px;
+  left: -120px;
+}
+
+.playing .wave {
+  border-radius: 40%;
+  animation: wave 3000ms infinite linear;
+}
+
+.wave {
+  position: absolute;
+  width: 1010px;
+  height: 960px;
+  opacity: 0.6;
+  left: 0;
+  top: 0;
+  margin-left: -60%;
+  margin-top: -60%;
+  background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb);
+  border-radius: 40%;
+  animation: wave 55s infinite linear;
+}
+
+.playing:first-child {
+  color: var(--light-second);
+}
+
+.playing:nth-child(2) .wave {
+  background: linear-gradient(744deg, #10f2f6, #95D2B3 60%, #a3ff40);
+}
+
+.playing .wave:nth-child(2) {
+  animation-duration: 4000ms;
+}
+
+.wave:nth-child(2) {
+  animation-duration: 50s;
+}
+
+.playing .wave:nth-child(3) {
+  animation-duration: 5000ms;
+}
+
+.wave:nth-child(3) {
+  animation-duration: 45s;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .footer {
@@ -244,7 +358,7 @@ h1 {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   pointer-events: none;
   opacity: 0;
-  transform: scale(.5);
+  transform: scale(0.5);
   transform-origin: bottom right;
   transition: all 0.1s ease;
 }
