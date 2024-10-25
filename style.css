@@ -100,7 +100,8 @@ h1 {
 
 .section1,
 .section3,
-.section4 {
+.section4,
+.section5 {
   padding: 96px 78px;
   display: flex;
   justify-content: center;
@@ -114,7 +115,8 @@ h1 {
 
 .section1-wrap,
 .section3-wrap,
-.section4-wrap {
+.section4-wrap,
+.section5-wrap {
   display: flex;
   align-items: center;
   max-width: 1440px;
@@ -163,6 +165,7 @@ h1 {
 .section3-wrap .left-up,
 .section4-wrap .right-down {
   width: 50%;
+  padding: 50px;
 }
 
 .section1-wrap .right-down img,
@@ -310,6 +313,23 @@ h1 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.section5-wrap {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.section5-wrap p {
+  margin: 20px 0 50px 0;
+}
+
+.review {
+  padding: 0 60px;
+}
+
+.review p{
+  margin: 20px 0;
 }
 
 .footer {
