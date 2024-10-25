@@ -325,6 +325,21 @@ h1 {
   margin: 20px 0 50px 0;
 }
 
+.owl-carousel {
+  cursor: pointer;
+}
+
+.review {
+  height: 180px;
+  display: grid;
+  border-radius: 35px;
+  background-color: var(--light);
+  padding: 25px 50px;
+}
+
+.review span:last-child {
+  align-self: flex-end;
+}
 
 .review p{
   margin: 20px 0;
