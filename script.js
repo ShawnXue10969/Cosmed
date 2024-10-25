@@ -88,7 +88,7 @@ fetch("./answers.json")
 
 $(".owl-carousel").owlCarousel({
   loop: true,
-  margin: 50,
+  margin: 90,
   responsive: {
     600: {
       items: 3,

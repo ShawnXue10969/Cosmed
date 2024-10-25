@@ -318,15 +318,13 @@ h1 {
 .section5-wrap {
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 
 .section5-wrap p {
   margin: 20px 0 50px 0;
 }
 
-.review {
-  padding: 0 60px;
-}
 
 .review p{
   margin: 20px 0;
