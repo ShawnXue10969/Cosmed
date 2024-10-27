@@ -4,6 +4,15 @@ const chatBox = document.querySelector(".chatbox");
 const chatToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
 
+$(window).on('load', function(){
+  setTimeout(removeLoader, 700);
+});
+function removeLoader(){
+    $( ".loader" ).fadeOut(500, function() {
+      $( ".loader" ).hide();
+  });  
+}
+
 fetch("./answers.json")
   .then((res) => res.json())
   .then((data) => {
@@ -91,7 +100,7 @@ $(".owl-carousel").owlCarousel({
   margin: 30,
   autoplay: true,
   autoplayTimeout: 3500,
-  autoplayHoverPause:true,
+  autoplayHoverPause: true,
   responsive: {
     600: {
       items: 3,
