@@ -245,7 +245,7 @@ h1 {
   padding: 24px 52px;
   background: transparent;
   overflow: hidden;
-  max-width: 500px;
+  width: 500px;
 }
 
 .section4 .right-down .card h1 {
@@ -386,6 +386,7 @@ h1 {
   outline: none;
   cursor: pointer;
   transition: all 0.2s ease;
+  z-index: 10;
 }
 
 .show-chatbot .chatbot-toggler {
@@ -648,6 +649,12 @@ h1 {
   }
 }
 
+@media only screen and (min-width: 2560px) {
+  .wrap-dim .wrap-blur {
+    align-items: flex-end;
+  }
+}
+
 @media only screen and (max-width: 1400px) {
   .wrap-dim h1 {
     font-size: 2.7em;
@@ -683,6 +690,28 @@ h1 {
   .section2 .card-wrap .card {
     transform: scale(0.8);
   }
+
+  .section4-wrap {
+    flex-direction: column;
+  }
+
+  .section4-wrap .left-up {
+    width: calc(100vw - 156px);
+    padding: 0;
+  }
+
+  .section4-wrap .left-up {
+    margin-bottom: 72px;
+  }
+
+  .section4-wrap .right-down {
+    width: 70%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 42px;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -701,14 +730,12 @@ h1 {
   }
 
   .section1-wrap .left-up,
-  .section3-wrap .right-down,
-  .section4-wrap .left-up {
+  .section3-wrap .right-down {
     width: calc(55% - 30px);
   }
 
   .section1-wrap .right-down,
-  .section3-wrap .left-up,
-  .section4-wrap .right-down {
+  .section3-wrap .left-up {
     width: calc(45% - 30px);
   }
 
@@ -729,27 +756,23 @@ h1 {
 
   .section1-wrap,
   .section3-wrap,
-  .section4-wrap,
   .section5-wrap {
     flex-direction: column;
   }
 
   .section1-wrap .left-up,
-  .section3-wrap .right-down,
-  .section4-wrap .left-up {
+  .section3-wrap .right-down {
     width: 100%;
     padding: 0;
   }
 
   .section1-wrap .left-up,
-  .section4-wrap .left-up,
   .section3-wrap .left-up {
     margin-bottom: 72px;
   }
 
   .section1-wrap .right-down,
-  .section3-wrap .left-up,
-  .section4-wrap .right-down {
+  .section3-wrap .left-up {
     width: 70%;
     padding: 0;
   }
@@ -775,9 +798,17 @@ h1 {
     width: 160px;
     max-width: 90%;
   }
+
+  .review {
+    height: auto;
+  }
 }
 
 @media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.6em;
+  }
+  
   .wrap-dim .wrap-blur {
     width: calc(100% - 112px);
   }
@@ -795,9 +826,21 @@ h1 {
   .section1 .text-r {
     width: 100%;
   }
+
+  .section4-wrap .right-down {
+    transform: scale(0.75);
+  }
+
+  .section4-wrap .left-up {
+    margin-bottom: 8px;
+  }
 }
 
 @media only screen and (max-width: 490px) {
+  h1 {
+    font-size: 1.4em;
+  }
+
   .chatbot {
     right: 0;
     bottom: 0;
@@ -817,5 +860,9 @@ h1 {
 
   .chatbot .chatbox {
     height: 72%;
+  }
+
+  .section4-wrap .right-down {
+    transform: scale(0.5);
   }
 }
