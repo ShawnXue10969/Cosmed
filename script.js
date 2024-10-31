@@ -96,13 +96,17 @@ fetch("./answers.json")
   });
 
 $(".owl-carousel").owlCarousel({
+  items: 1,
   loop: true,
   margin: 30,
   autoplay: true,
   autoplayTimeout: 3500,
   autoplayHoverPause: true,
   responsive: {
-    600: {
+    992: {
+      items: 2,
+    },
+    1400: {
       items: 3,
     },
   },
