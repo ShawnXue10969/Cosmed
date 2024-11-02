@@ -11,12 +11,22 @@
     <script src="jquery-3.7.1.min.js" defer></script>
     <script src="owlcarousel/owl.carousel.min.js" defer></script>
     <script src="script.js" defer></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="3dbg.js"></script>
   </head>
   <body>
     <div class="navbar">
       <a class="logo" href="#"><img src="images/logo5.svg" alt="" /></a>
     </div>
     <div class="hero">
+      <div id="container3D"></div>
       <div class="wrap-dim">
         <div class="wrap-blur">
           <h1>Transforming Hair and Skin with Expert Care</h1>
