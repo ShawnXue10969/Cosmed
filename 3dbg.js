@@ -33,11 +33,14 @@ composer.addPass(renderPass);
 
 composer.addPass(bloomPass);
 
+let mouseX = 0;
+let mouseY = 0;
 
+let targetX = 0;
+let targetY = 0;
 
-//Keep track of the mouse position, so we can make the eye move
-let mouseX = window.innerWidth / 2;
-let mouseY = window.innerHeight / 2;
+let windowHalfX = window.innerWidth / 2;
+let windowHalfY = window.innerHeight / 2;
 
 //Keep the 3D object on a global variable so we can access it later
 let object;
@@ -75,15 +78,14 @@ loader.load(
 //Add the renderer to the DOM
 document.getElementById("container3D").appendChild(renderer.domElement);
 
-//Set how far the camera will be from the 3D model
+//Set camera position
 camera.position.z = 30;
 camera.position.y = 45;
 camera.position.x = -20;
 
-//Add lights to the scene, so we can actually see the 3D model
+//Add lights to the scene
 const topLight = new THREE.DirectionalLight(0xf8f7ff, 1); // (color, intensity)
 topLight.position.set(500, 500, 500); //top-left-ish
-topLight.castShadow = true;
 scene.add(topLight);
 
 const ambientLight = new THREE.AmbientLight(0xf8f7ff, 2.2);
@@ -94,15 +96,14 @@ controls = new OrbitControls(camera, renderer.domElement);
 //Render the scene
 function animate() {
   requestAnimationFrame(animate);
-  //Here we could add some code to update the scene, adding some automatic movement
 
-  //Make the eye move
-  if (object && objToRender === "eye") {
-    //I've played with the constants here until it looked good
-    object.rotation.y = -3 + (mouseX / window.innerWidth) * 3;
-    object.rotation.x = -1.2 + (mouseY * 2.5) / window.innerHeight;
-  }
   object.rotation.x += 0.003;
+
+  targetX = mouseX * 0.00002;
+  targetY = mouseY * 0.00006;
+
+  camera.rotation.x = -0.9828 - targetY;
+  camera.rotation.y = -0.3542 - targetX;
   renderer.render(scene, camera);
 }
 
@@ -115,8 +116,8 @@ window.addEventListener("resize", function () {
 
 //add mouse position listener, so we can make the eye move
 document.onmousemove = (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
+  mouseX = e.clientX - windowHalfX;
+  mouseY = e.clientY - windowHalfY;
 };
 controls.enabled = false;
 //Start the 3D rendering
