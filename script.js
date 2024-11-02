@@ -5,7 +5,7 @@ const chatToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
 
 $(window).on('load', function(){
-  setTimeout(removeLoader, 700);
+  setTimeout(removeLoader, 0);
 });
 function removeLoader(){
     $( ".loader" ).fadeOut(500, function() {
