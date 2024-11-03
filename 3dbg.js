@@ -24,7 +24,7 @@ const renderPass = new RenderPass(scene, camera);
 
 const bloomPass = new UnrealBloomPass(
   new THREE.Vector2(window.innerWidth, window.innerHeight),
-  1.2,
+  0.5,
   0.3,
   0.1
 );
@@ -32,6 +32,7 @@ const bloomPass = new UnrealBloomPass(
 composer.addPass(renderPass);
 
 composer.addPass(bloomPass);
+//scene.background = new THREE.Color(0x);
 
 let mouseX = 0;
 let mouseY = 0;
@@ -102,7 +103,8 @@ function animate() {
   targetX = mouseX * 0.00002;
   targetY = mouseY * 0.00006;
 
-  camera.rotation.x = -0.9828 - targetY;
+  camera.position.z = 30 + targetY * 70;
+  //camera.rotation.x = -0.9828 - targetY;
   camera.rotation.y = -0.3542 - targetX;
   renderer.render(scene, camera);
 }
