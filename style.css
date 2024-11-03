@@ -5,6 +5,11 @@
   --iris: #6643b5;
   --vista-blue: #8594e4;
   --celadon: #95d2b3;
+  --color1: 161, 119, 255;
+  --color2: 153, 169, 255;
+  --color3: 121, 254, 186;
+  --circle-size: 80%;
+  --blending: hard-light;
 }
 
 * {
@@ -60,10 +65,31 @@ h1 {
   position: relative;
   margin-top: 82px;
   height: 720px;
-  background-color: var(--light);
+  background: rgb(255, 247, 240);
+  background: linear-gradient(
+    315deg,
+    rgba(255, 247, 240, 1) 0%,
+    rgba(248, 247, 255, 1) 50%,
+    rgba(231, 231, 255, 1) 100%
+  );
   /*background-attachment: fixed;*/
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
+}
+
+.hero svg {
+  display: none;
+}
+
+.blob-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: url(#goo) blur(20px);
 }
 
 .hero h1 {
@@ -85,6 +111,147 @@ h1 {
   width: 100%;
 }
 
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-40%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(40%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-40%) translateY(-10%);
+  }
+}
+
+.g1 {
+  position: absolute;
+  background: radial-gradient(
+      circle at center,
+      rgba(var(--color1), 0.4) 0,
+      rgba(var(--color1), 0) 50%
+    )
+    no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: center center;
+  animation: moveVertical 36s ease infinite;
+
+  opacity: 1;
+}
+
+.g2 {
+  position: absolute;
+  background: radial-gradient(
+      circle at center,
+      rgba(var(--color2), 0.6) 0,
+      rgba(var(--color2), 0) 50%
+    )
+    no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: calc(50% - 400px);
+  animation: moveInCircle 30s reverse infinite;
+
+  opacity: 1;
+}
+
+.g3 {
+  position: absolute;
+  background: radial-gradient(
+      circle at center,
+      rgba(var(--color3), 0.6) 0,
+      rgba(var(--color3), 0) 50%
+    )
+    no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2 + 200px);
+  left: calc(50% - var(--circle-size) / 2 - 500px);
+
+  transform-origin: calc(50% + 400px);
+  animation: moveInCircle 40s linear infinite;
+
+  opacity: 1;
+}
+
+.g4 {
+  position: absolute;
+  background: radial-gradient(
+      circle at center,
+      rgba(var(--color2), 0.6) 0,
+      rgba(var(--color2), 0) 50%
+    )
+    no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+  top: calc(50% - var(--circle-size) / 2);
+  left: calc(50% - var(--circle-size) / 2);
+
+  transform-origin: calc(50% - 200px);
+  animation: moveHorizontal 40s ease infinite;
+
+  opacity: 1;
+}
+
+.g5 {
+  position: absolute;
+  background: radial-gradient(
+      circle at center,
+      rgba(var(--color3), 0.6) 0,
+      rgba(var(--color3), 0) 50%
+    )
+    no-repeat;
+  mix-blend-mode: var(--blending);
+
+  width: calc(var(--circle-size) * 2);
+  height: calc(var(--circle-size) * 2);
+  top: calc(50% - var(--circle-size));
+  left: calc(50% - var(--circle-size));
+
+  transform-origin: calc(50% - 800px) calc(50% + 200px);
+  animation: moveInCircle 32s ease infinite;
+
+  opacity: 1;
+}
+
 .wrap-dim {
   display: flex;
   flex-direction: column;
@@ -98,6 +265,7 @@ h1 {
   height: 100%;
   width: calc(50% - 112px);
   justify-content: center;
+  background-color: rgba(248, 247, 255, 0.6);
   backdrop-filter: blur(15px);
   padding: 0 56px;
 }
