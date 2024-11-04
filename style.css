@@ -8,7 +8,8 @@
   --color1: 161, 119, 255;
   --color2: 153, 169, 255;
   --color3: 121, 254, 186;
-  --circle-size: 80%;
+  --color4: 251, 74, 47;
+  --circle-size: 100%;
   --blending: hard-light;
 }
 
@@ -65,12 +66,12 @@ h1 {
   position: relative;
   margin-top: 82px;
   height: 720px;
-  background: rgb(255, 247, 240);
+  background: var(--light);
   background: linear-gradient(
     315deg,
-    rgba(255, 247, 240, 1) 0%,
+    rgba(240, 240, 248, 1) 0%,
     rgba(248, 247, 255, 1) 50%,
-    rgba(231, 231, 255, 1) 100%
+    rgba(236, 236, 244, 1) 100%
   );
   /*background-attachment: fixed;*/
   background-repeat: no-repeat;
@@ -151,7 +152,7 @@ h1 {
   position: absolute;
   background: radial-gradient(
       circle at center,
-      rgba(var(--color1), 0.4) 0,
+      rgba(var(--color1), 0.5) 0,
       rgba(var(--color1), 0) 50%
     )
     no-repeat;
@@ -249,7 +250,7 @@ h1 {
   transform-origin: calc(50% - 800px) calc(50% + 200px);
   animation: moveInCircle 32s ease infinite;
 
-  opacity: 1;
+  opacity: .8;
 }
 
 .wrap-dim {
