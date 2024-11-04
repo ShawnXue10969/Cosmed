@@ -1,9 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
-import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
-import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
@@ -18,21 +15,6 @@ const camera = new THREE.PerspectiveCamera(
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true }); //Alpha: true allows for the transparent background
 renderer.setSize(window.innerWidth, window.innerHeight);
-
-const composer = new EffectComposer(renderer);
-const renderPass = new RenderPass(scene, camera);
-
-const bloomPass = new UnrealBloomPass(
-  new THREE.Vector2(window.innerWidth, window.innerHeight),
-  0.5,
-  0.3,
-  0.1
-);
-
-composer.addPass(renderPass);
-
-composer.addPass(bloomPass);
-//scene.background = new THREE.Color(0x);
 
 let mouseX = 0;
 let mouseY = 0;
