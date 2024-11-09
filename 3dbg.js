@@ -2,11 +2,17 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
+function removeLoader() {
+  $(".loader").fadeOut(500, function () {
+    $(".loader").hide();
+  });
+}
+
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
 const camera = new THREE.PerspectiveCamera(
-  32,
+  40,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -34,8 +40,13 @@ let controls;
 //Set which object to render
 let objToRender = "2";
 
+const loadingManager = new THREE.LoadingManager();
+
+loadingManager.onLoad = () => {
+  setTimeout(removeLoader, 0);
+};
 //Instantiate a loader for the .gltf file
-const loader = new GLTFLoader();
+const loader = new GLTFLoader(loadingManager);
 
 //Load the file
 loader.load(
