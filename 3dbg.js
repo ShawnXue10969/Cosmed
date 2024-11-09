@@ -12,7 +12,7 @@ function removeLoader() {
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
 const camera = new THREE.PerspectiveCamera(
-  40,
+  35,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -21,15 +21,6 @@ const camera = new THREE.PerspectiveCamera(
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true }); //Alpha: true allows for the transparent background
 renderer.setSize(window.innerWidth, window.innerHeight);
-
-let mouseX = 0;
-let mouseY = 0;
-
-let targetX = 0;
-let targetY = 0;
-
-let windowHalfX = window.innerWidth / 2;
-let windowHalfY = window.innerHeight / 2;
 
 //Keep the 3D object on a global variable so we can access it later
 let object;
@@ -90,15 +81,7 @@ controls = new OrbitControls(camera, renderer.domElement);
 //Render the scene
 function animate() {
   requestAnimationFrame(animate);
-
   object.rotation.x += 0.003;
-
-  targetX = mouseX * 0.00002;
-  targetY = mouseY * 0.00006;
-
-  camera.position.z = 30 + targetY * 70;
-  //camera.rotation.x = -0.9828 - targetY;
-  camera.rotation.y = -0.3542 - targetX;
   renderer.render(scene, camera);
 }
 
@@ -109,11 +92,6 @@ window.addEventListener("resize", function () {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-//add mouse position listener, so we can make the eye move
-document.onmousemove = (e) => {
-  mouseX = e.clientX - windowHalfX;
-  mouseY = e.clientY - windowHalfY;
-};
 controls.enabled = false;
 //Start the 3D rendering
 animate();
