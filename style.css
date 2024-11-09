@@ -127,6 +127,7 @@ h1 {
   height: 100%;
   width: calc(50% - 112px);
   justify-content: center;
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   padding: 0 56px;
 }
