@@ -738,7 +738,7 @@ h1 {
   }
 
   .section4-wrap .left-up {
-    width: calc(100vw - 76px);
+    width: calc(100vw - 156px);
     padding: 0;
   }
 
@@ -923,5 +923,10 @@ h1 {
   .section4-wrap .right-down {
     transform: scale(0.5);
     margin: -60px 0;
+  }
+
+  .section4-wrap .left-up {
+    width: calc(100vw - 94px);
+    padding: 0;
   }
 }
