@@ -35,6 +35,9 @@ const loadingManager = new THREE.LoadingManager();
 
 loadingManager.onLoad = () => {
   setTimeout(removeLoader, 0);
+
+  //Start the 3D rendering
+  animate();
 };
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader(loadingManager);
@@ -93,5 +96,3 @@ window.addEventListener("resize", function () {
 });
 
 controls.enabled = false;
-//Start the 3D rendering
-animate();
