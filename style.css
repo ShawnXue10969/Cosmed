@@ -238,7 +238,42 @@ h1 {
   text-shadow: #5dcfd0 1px 0 10px;
 }
 
+.contact {
+  display: flex;
+  margin-top: 150px;
+  color: var(--dark);
+}
+
+.contact-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact::before {
+  display: block;
+  content: " ";
+  width: 5px;
+  height: 100%;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(45deg, #9958f3, #779ddf, #50e7c8);
+  margin-right: 12px;
+}
+
+.contact-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.contact img {
+  width: 1em;
+  display: block;
+  margin-right: 5px;
+}
+
 .section3,
+.section4,
 .section5 {
   padding: 96px 78px;
   display: flex;
@@ -249,6 +284,10 @@ h1 {
 
 .section1,
 .section4 {
+  padding: 96px 78px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   background-color: var(--light);
 }
 
@@ -256,10 +295,9 @@ h1 {
 .section3-wrap,
 .section4-wrap,
 .section5-wrap {
-  padding: 96px 78px;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
   max-width: 1440px;
 }
 
@@ -510,6 +548,7 @@ h1 {
 }
 
 .section5-wrap {
+  padding: 0;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
@@ -871,6 +910,8 @@ h1 {
 
   .section4-wrap {
     flex-direction: column;
+    width: 100%;
+    overflow: visible;
   }
 
   .section4-wrap .left-up {
@@ -883,7 +924,7 @@ h1 {
   }
 
   .section4-wrap .right-down {
-    width: 70%;
+    width: 100%;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -1013,6 +1054,14 @@ h1 {
     flex-direction: column;
   }
 
+  .section1,
+  .section2,
+  .section3,
+  .section4,
+  .section5 {
+    padding: 52px 38px;
+  }
+
   .section1 .text-l {
     margin-bottom: 30px;
   }
@@ -1040,21 +1089,25 @@ h1 {
     font-size: 1.4em;
   }
 
+  .hero {
+    height: auto;
+  }
+
   .wrap-dim .wrap-blur {
     width: calc(100% - 60px);
-    padding: 15px 30px;
+    padding: 55px 30px;
   }
 
   .promotion {
     padding: 8px 16px;
   }
 
-  .section1,
-  .section2,
-  .section3,
-  .section4,
-  .section5 {
-    padding: 52px 38px;
+  .contact {
+    margin-top: 50px;
+  }
+
+  .section1-wrap {
+    padding: 0;
   }
 
   .section2 .card-wrap .card h2 {
