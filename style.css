@@ -1024,6 +1024,11 @@ h1 {
     padding: 0;
   }
 
+  .services-wrap {
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
   .service-card .card-img {
     height: 80%;
   }
@@ -1034,10 +1039,9 @@ h1 {
   }
 
   .services-wrap .service-card {
-    width: 100%;
+    width: 45%;
   }
 
-  .services-wrap,
   .section2 .card-wrap {
     flex-direction: column;
     align-items: center;
@@ -1087,11 +1091,16 @@ h1 {
   }
 
   .section1,
+  .services,
   .section2,
   .section3,
   .section4,
   .section5 {
     padding: 52px 38px;
+  }
+
+  .services-wrap .service-card {
+    width: 75%;
   }
 
   .section1 .text-l {
@@ -1140,6 +1149,20 @@ h1 {
 
   .section1-wrap {
     padding: 0;
+  }
+
+  .service-wrap .service-card {
+    height: 300px;
+    width: 100%;
+  }
+
+  .service-card .card-img {
+    height: 70%;
+  }
+
+  .service-card .card-content {
+    height: calc(30% - 24px);
+    padding: 12px 12px;
   }
 
   .section2 .card-wrap .card h2 {
