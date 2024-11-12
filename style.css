@@ -243,6 +243,7 @@ h1 {
   max-width: 310px;
   color: var(--light);
   padding: 15px 30px;
+  cursor: pointer;
 }
 
 .promotion:after {
@@ -265,6 +266,13 @@ h1 {
   text-shadow: #5dcfd0 1px 0 10px;
 }
 
+.promotion span {
+  font-weight: 600;
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
 .contact {
   display: flex;
   margin-top: 100px;
@@ -284,12 +292,11 @@ h1 {
   height: 100%;
   border-radius: 5px;
   background: -webkit-linear-gradient(45deg, #9958f3, #779ddf, #50e7c8);
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 .contact-line {
   display: flex;
-  flex-wrap: wrap;
   align-content: center;
 }
 
@@ -338,6 +345,10 @@ h1 {
 .section3-wrap .right-down {
   padding-left: 47px;
   padding-right: 0;
+}
+
+.section3-wrap .right-down p {
+  margin-bottom: 8px;
 }
 
 .section1 h1,
@@ -971,13 +982,6 @@ h1 {
 
   h1 {
     font-size: 1.8em;
-  }
-
-  .section1 h1,
-  .services h1,
-  .section3 h1,
-  .section4 h1 {
-    margin-bottom: 15px;
   }
 
   .section1-wrap .left-up,
