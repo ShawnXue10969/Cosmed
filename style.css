@@ -329,7 +329,6 @@ h1 {
 
 .service-card {
   border-radius: 15px;
-  background-color: var(--dark);
   color: var(--light);
   height: 500px;
   overflow: hidden;
@@ -350,6 +349,7 @@ h1 {
   justify-content: flex-start;
   height: calc(30% - 50px);
   padding: 25px 25px;
+  background-color: var(--dark);
 }
 
 .service-card .card-content h1 {
@@ -978,6 +978,7 @@ h1 {
     max-width: 100%;
   }
 
+  .services h1,
   .section2 h1 {
     max-width: 552px;
     margin-bottom: 50px;
