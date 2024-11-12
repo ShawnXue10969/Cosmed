@@ -115,7 +115,7 @@ h1 {
   justify-content: center;
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  padding: 0 56px;
+  padding: 28px 56px;
 }
 
 .wrap-dim h1 {
@@ -139,6 +139,7 @@ h1 {
   background: -webkit-linear-gradient(45deg, #9958f3, #779ddf, #50e7c8);
   color: var(--light);
   width: 100px;
+  min-width: 100px;
   height: 100px;
   border-radius: 50%;
   overflow: hidden;
@@ -202,6 +203,32 @@ h1 {
   to {
     rotate: 360deg;
   }
+}
+
+.promotion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: var(--dark);
+  border-radius: 0.4em;
+  margin-left: 20px;
+  color: var(--light);
+  padding: 15px 30px;
+}
+
+.promotion:after {
+  content: "";
+  position: absolute;
+  left: 1px;
+  top: 50px;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  border-right-color: var(--dark);
+  border-left: 0;
+  margin-top: -8px;
+  margin-left: -8px;
 }
 
 .section1,
@@ -809,6 +836,10 @@ h1 {
 }
 
 @media only screen and (max-width: 1200px) {
+  .wrap-dim .wrap-blur {
+    width: calc(70% - 112px);
+  }
+
   .wrap-dim h1 {
     font-size: 2.2em;
   }
@@ -844,9 +875,6 @@ h1 {
 }
 
 @media only screen and (max-width: 992px) {
-  .wrap-dim .wrap-blur {
-    width: calc(70% - 112px);
-  }
 
   .section1-wrap,
   .section3-wrap,
