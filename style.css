@@ -1044,6 +1044,9 @@ h1 {
   h1 {
     font-size: 1.6em;
   }
+  .navbar {
+    padding: 5px 25px;
+  }
 
   .wrap-dim .wrap-blur {
     width: calc(100% - 112px);
