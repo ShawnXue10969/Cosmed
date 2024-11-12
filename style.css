@@ -46,9 +46,10 @@ h1 {
   top: 0;
   display: flex;
   height: 72px;
-  width: 100%;
+  width: calc(100% - 100px);
   padding: 5px 50px;
   align-items: center;
+  justify-content: space-between;
   background-color: var(--light);
   box-shadow: rgba(94, 94, 94, 0.1) 0px 8px 24px;
   z-index: 999;
@@ -60,6 +61,32 @@ h1 {
 
 .navbar .logo img {
   height: 100%;
+}
+
+.navbar .nav-book {
+  text-decoration: none;
+  color: var(--dark);
+  position: relative;
+}
+
+.nav-book:focus:before,
+.nav-book:hover:before {
+  width: 100%;
+  left: 0%;
+}
+
+.nav-book:before {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: var(--dark);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
 }
 
 .hero {
@@ -1044,8 +1071,10 @@ h1 {
   h1 {
     font-size: 1.6em;
   }
+
   .navbar {
     padding: 5px 25px;
+    width: calc(100% - 50px);
   }
 
   .wrap-dim .wrap-blur {
