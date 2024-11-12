@@ -238,9 +238,7 @@ h1 {
   text-shadow: #5dcfd0 1px 0 10px;
 }
 
-.section1,
 .section3,
-.section4,
 .section5 {
   padding: 96px 78px;
   display: flex;
@@ -249,6 +247,7 @@ h1 {
   background-color: var(--light-second);
 }
 
+.section1,
 .section4 {
   background-color: var(--light);
 }
@@ -257,8 +256,10 @@ h1 {
 .section3-wrap,
 .section4-wrap,
 .section5-wrap {
+  padding: 96px 78px;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   max-width: 1440px;
 }
 
@@ -275,6 +276,7 @@ h1 {
 }
 
 .section1 h1,
+.services h1,
 .section3 h1,
 .section4 h1 {
   margin-bottom: 20px;
@@ -317,6 +319,52 @@ h1 {
   width: 100%;
 }
 
+.services {
+  background-color: var(--light-second);
+}
+
+.services-wrap {
+  gap: 15px;
+}
+
+.service-card {
+  border-radius: 15px;
+  background-color: var(--dark);
+  color: var(--light);
+  height: 500px;
+  overflow: hidden;
+  width: 25%;
+  cursor: pointer;
+}
+
+.service-card .card-img,
+.service-card .card-content {
+  height: 70%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-card .card-content {
+  justify-content: flex-start;
+  height: calc(30% - 50px);
+  padding: 25px 25px;
+}
+
+.service-card .card-content h1 {
+  text-align: left;
+  margin: 0;
+  line-height: 1.1em;
+}
+
+.service-card .card-img img {
+  height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+.services,
 .section2 {
   padding: 96px 78px;
   display: flex;
@@ -324,12 +372,14 @@ h1 {
   align-items: center;
 }
 
+.services h1,
 .section2 h1 {
   max-width: 852px;
   text-align: center;
   margin-bottom: 52px;
 }
 
+.services-wrap,
 .section2 .card-wrap {
   display: flex;
   justify-content: space-around;
@@ -856,6 +906,7 @@ h1 {
   }
 
   .section1 h1,
+  .services h1,
   .section3 h1,
   .section4 h1 {
     margin-bottom: 15px;
@@ -905,8 +956,23 @@ h1 {
     padding: 0;
   }
 
+  .service-card .card-img {
+    height: 80%;
+  }
+
+  .service-card .card-content {
+    height: calc(20% - 50px);
+    padding: 25px 25px;
+  }
+
+  .services-wrap .service-card {
+    width: 100%;
+  }
+
+  .services-wrap,
   .section2 .card-wrap {
     flex-direction: column;
+    align-items: center;
     width: auto;
     gap: 52px;
     max-width: 100%;
