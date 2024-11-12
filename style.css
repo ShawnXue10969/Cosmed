@@ -244,6 +244,7 @@ h1 {
   color: var(--light);
   padding: 15px 30px;
   cursor: pointer;
+  font-size: 1.1em;
 }
 
 .promotion:after {
@@ -261,9 +262,9 @@ h1 {
 }
 
 .promotion strong {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #5dcfd0;
-  text-shadow: #5dcfd0 1px 0 10px;
+  text-shadow: #5dcfd0 .5px 0 8px;
 }
 
 .promotion span {
@@ -1136,6 +1137,10 @@ h1 {
 
   .hero {
     height: auto;
+  }
+
+  .promotion p {
+    font-size: .85em;
   }
 
   .wrap-dim .wrap-blur {
