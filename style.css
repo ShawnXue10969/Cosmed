@@ -168,7 +168,7 @@ h1 {
   height: 40px;
   overflow: hidden;
   background: var(--light);
-  color: #000;
+  color: var(--dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -181,12 +181,12 @@ h1 {
 }
 
 .book-btn:hover {
-  background: #000;
+  background: var(--dark);
   transform: scale(1.05);
 }
 
 .book-btn:hover .button__icon {
-  color: #000;
+  color: var(--dark);
 }
 
 .book-btn:hover .button__icon:first-child {
@@ -213,6 +213,7 @@ h1 {
   background: var(--dark);
   border-radius: 0.4em;
   margin-left: 20px;
+  max-width: 328px;
   color: var(--light);
   padding: 15px 30px;
 }
@@ -229,6 +230,12 @@ h1 {
   border-left: 0;
   margin-top: -8px;
   margin-left: -8px;
+}
+
+.promotion strong {
+  font-size: 1.2em;
+  color: #5dcfd0;
+  text-shadow: #5dcfd0 1px 0 10px;
 }
 
 .section1,
@@ -656,7 +663,7 @@ h1 {
 }
 
 .footer .logo {
-  height: 90px;
+  height: 120px;
 }
 
 .footer p {
@@ -875,7 +882,6 @@ h1 {
 }
 
 @media only screen and (max-width: 992px) {
-
   .section1-wrap,
   .section3-wrap,
   .section5-wrap {
@@ -967,6 +973,15 @@ h1 {
     font-size: 1.4em;
   }
 
+  .wrap-dim .wrap-blur {
+    width: calc(100% - 60px);
+    padding: 15px 30px;
+  }
+
+  .promotion {
+    padding: 8px 16px;
+  }
+
   .section1,
   .section2,
   .section3,
@@ -1008,5 +1023,10 @@ h1 {
   .section4-wrap .left-up {
     width: calc(100vw - 86px);
     padding: 0;
+  }
+
+  .footer .logo {
+    height: auto;
+    width: 100%;
   }
 }
