@@ -181,12 +181,12 @@ h1 {
   position: absolute;
   inset: 0;
   animation: text-rotation 8s linear infinite;
+}
 
-  > span {
-    position: absolute;
-    transform: rotate(calc(19deg * var(--index)));
-    inset: 7px;
-  }
+.button__text span {
+  position: absolute;
+  transform: rotate(calc(18deg * var(--index)));
+  inset: 7px;
 }
 
 .button__circle {
