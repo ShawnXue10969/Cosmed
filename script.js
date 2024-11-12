@@ -25,7 +25,7 @@ fetch("./answers.json")
       const messageElement = incomingChatLi.querySelector("p");
 
       setTimeout(() => {
-        messageElement.textContent = findAnswer(userMessage);
+        messageElement.innerHTML = findAnswer(userMessage);
         chatBox.scrollTop = chatBox.scrollHeight;
       }, 900);
     };
@@ -52,7 +52,7 @@ fetch("./answers.json")
         }
       }
 
-      return bestMatch || "I don't understand your question. Please try again.";
+      return bestMatch || "Sorry, I don't quite understand your question. Please try again or give us a phone call +61 0406 888 546.";
     };
 
     const handleChat = () => {

@@ -5,18 +5,157 @@
     "weight": 1
   },
   "greetings": {
-    "keywords": ["hello", "hi", "hey", "hi there", "good morning", "good afternoon", "good evening", "greetings"],
+    "keywords": [
+      "hello",
+      "hi",
+      "hey",
+      "yo",
+      "hi there",
+      "good morning",
+      "good afternoon",
+      "good evening",
+      "greetings",
+      "what's up"
+    ],
     "answer": "Hello! How can I help you today?",
     "weight": 1
   },
+  "farewells": {
+    "keywords": ["bye", "goodbye", "see you", "take care", "later", "bye-bye"],
+    "answer": "Goodbye! Let me know if you need any help in the future.",
+    "weight": 1.2
+  },
+  "appreciation": {
+    "keywords": ["thank you", "thanks", "appreciate it", "grateful"],
+    "answer": "You're very welcome! I'm here to help anytime.",
+    "weight": 1.3
+  },
+  "apologies": {
+    "keywords": ["sorry", "apologize", "my bad", "forgive me"],
+    "answer": "No worries! Let me know how I can assist you.",
+    "weight": 1.2
+  },
+  "help": {
+    "keywords": ["help", "assist", "support"],
+    "answer": "Of course! Please let me know what you need help with.",
+    "weight": 1.3
+  },
+  "product": {
+    "keywords": [
+      "products",
+      "services",
+      "offerings",
+      "what do you have",
+      "what can you do",
+      "what do you offer",
+      "what can I buy",
+      "price",
+      "cost",
+      "how much",
+      "pricing",
+      "fee",
+      "charge",
+      "rate",
+      "book",
+      "reserve",
+      "appointment",
+      "booking"
+    ],
+    "answer": "We offer a range of products and services. For further details please see our <a href='https://clients.mase.cloud/shopDetail?custId=AUCHSS&compId=462420230904479744'>book page</a>.",
+    "weight": 1.3
+  },
+  "availability": {
+    "keywords": [
+      "availability",
+      "schedule",
+      "open",
+      "opening",
+      "hours",
+      "when can I come",
+      "close",
+      "closing"
+    ],
+    "answer": "We’re available during 09:00-18:00. Would you like to schedule an appointment on our <a href='https://clients.mase.cloud/shopDetail?custId=AUCHSS&compId=462420230904479744'>book page</a>?",
+    "weight": 1.5
+  },
+  "location": {
+    "keywords": [
+      "location",
+      "where are you",
+      "address",
+      "how to find you",
+      "directions",
+      "where is your shop",
+      "where is your clinic"
+    ],
+    "answer": "We’re located at 3019/27 Garden Street Southport, QLD 4215. Let me know if you need detailed directions.",
+    "weight": 1.5
+  },
+  "complaints": {
+    "keywords": [
+      "complaint",
+      "unhappy",
+      "not satisfied",
+      "disappointed",
+      "bad experience",
+      "problem"
+    ],
+    "answer": "I’m sorry to hear that. Please let us know what went wrong, and we’ll do our best to make it right. Our number is +61 0406 888 546.",
+    "weight": 1.2
+  },
+  "compliments": {
+    "keywords": [
+      "love",
+      "great",
+      "amazing",
+      "ty",
+      "thank you",
+      "cheers",
+      "appreciate",
+      "excellent",
+      "wonderful"
+    ],
+    "answer": "Thank you so much for the kind words! We’re glad you had a great experience.",
+    "weight": 1.3
+  },
+  "phone": {
+    "keywords": [
+      "question",
+      "return",
+      "refund",
+      "money back",
+      "exchange",
+      "replace",
+      "exchange",
+      "delivery",
+      "order status",
+      "track order",
+      "payment",
+      "options",
+      "discount",
+      "discounts",
+      "promotion",
+      "deal",
+      "sale",
+      "coupon",
+      "offer"
+    ],
+    "answer": "To help you with that, please call +61 0406 888 546.",
+    "weight": 1.2
+  },
   "skin": {
     "keywords": ["skin", "acne", "wrinkles", "dry", "sensitive", "scar"],
-    "answer": "For skin concerns, we offer a range of treatments including facials, chemical peels, and microdermabrasion.  Tell me more about your specific concern.",
+    "answer": "For skin concerns, we offer a range of treatments including facials, chemical peels, and microdermabrasion. Tell me more about your specific concern.",
     "weight": 2
   },
   "hair": {
     "keywords": ["hair", "loss", "thinning", "dandruff", "growth", "scalp"],
-    "answer": "We provide hair loss consultations, treatments, and hair care product recommendations.  What are your hair goals?",
+    "answer": "We provide hair loss consultations, treatments, and hair care product recommendations. What are your hair goals?",
+    "weight": 2
+  },
+  "services": {
+    "keywords": ["PRP", "PRF", "CGF"],
+    "answer": "We provide various PRP and PRF treatments according to your needs. Please find our services on our <a href='https://clients.mase.cloud/shopDetail?custId=AUCHSS&compId=462420230904479744'>book page</a> or give us a call+61 0406 888 546.",
     "weight": 2
   }
 }

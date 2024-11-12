@@ -79,20 +79,6 @@ h1 {
   background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
 }
 
-.hero svg {
-  display: none;
-}
-
-.blob-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  filter: url(#goo) blur(20px);
-}
-
 .hero h1 {
   background: -webkit-linear-gradient(45deg, #9958f3, #779ddf, #50e7c8);
   -webkit-background-clip: text;
@@ -137,22 +123,85 @@ h1 {
   margin-bottom: 15px;
 }
 
-.wrap-dim p {
+.hero-text {
   font-size: 1em;
   margin-bottom: 46px;
 }
 
-.btn {
+.hero .btn-wrap {
+  display: flex;
+}
+
+/* From Uiverse.io by Creatlydev */
+.book-btn {
+  cursor: pointer;
+  border: none;
+  background: -webkit-linear-gradient(45deg, #9958f3, #779ddf, #50e7c8);
+  color: var(--light);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-content: center;
+  transition: background 300ms, transform 200ms;
+  font-weight: 600;
+}
+
+.button__text {
+  position: absolute;
+  inset: 0;
+  animation: text-rotation 8s linear infinite;
+
+  > span {
+    position: absolute;
+    transform: rotate(calc(19deg * var(--index)));
+    inset: 7px;
+  }
+}
+
+.button__circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  background: var(--light);
+  color: #000;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
-  border: 2px var(--dark) solid;
-  height: 50px;
-  width: 130px;
-  color: var(--dark);
-  text-decoration: none;
-  user-select: none;
+}
+
+.button__icon--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+
+.book-btn:hover {
+  background: #000;
+  transform: scale(1.05);
+}
+
+.book-btn:hover .button__icon {
+  color: #000;
+}
+
+.book-btn:hover .button__icon:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+
+.book-btn:hover .button__icon--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+
+@keyframes text-rotation {
+  to {
+    rotate: 360deg;
+  }
 }
 
 .section1,
