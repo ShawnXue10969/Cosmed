@@ -1,10 +1,22 @@
 {
+  "category": {
+    "keywords": ["k1", "k2", "k3"],
+    "answer": "a",
+    "weight": 1
+  },
+  "greetings": {
+    "keywords": ["hello", "hi", "hey", "hi there", "good morning", "good afternoon", "good evening", "greetings"],
+    "answer": "Hello! How can I help you today?",
+    "weight": 1
+  },
   "skin": {
     "keywords": ["skin", "acne", "wrinkles", "dry", "sensitive", "scar"],
-    "answer": "For skin concerns, we offer a range of treatments including facials, chemical peels, and microdermabrasion.  Tell me more about your specific concern."
+    "answer": "For skin concerns, we offer a range of treatments including facials, chemical peels, and microdermabrasion.  Tell me more about your specific concern.",
+    "weight": 2
   },
   "hair": {
     "keywords": ["hair", "loss", "thinning", "dandruff", "growth", "scalp"],
-    "answer": "We provide hair loss consultations, treatments, and hair care product recommendations.  What are your hair goals?"
+    "answer": "We provide hair loss consultations, treatments, and hair care product recommendations.  What are your hair goals?",
+    "weight": 2
   }
 }

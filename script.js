@@ -35,20 +35,20 @@ fetch("./answers.json")
       let bestScore = 0;
 
       for (const category in data) {
-        const keywords = data[category].keywords;
+        const categoryData = data[category];
         let score = 0;
 
-        for (const keyword of keywords) {
+        for (const keyword of categoryData.keywords) {
           const regex = new RegExp(`\\b${keyword}\\b`, "gi"); // Word boundary matching
           const matches = question.match(regex);
           if (matches) {
-            score += matches.length; // Add the number of matches
+            score += matches.length * (categoryData.weight || 1); // Add the number of matches
           }
         }
 
         if (score > bestScore) {
           bestScore = score;
-          bestMatch = data[category].answer;
+          bestMatch = categoryData.answer;
         }
       }
 
