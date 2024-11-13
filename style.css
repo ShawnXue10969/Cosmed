@@ -264,7 +264,7 @@ h1 {
 .promotion strong {
   font-size: 1.4em;
   color: #5dcfd0;
-  text-shadow: #5dcfd0 .5px 0 8px;
+  text-shadow: #5dcfd0 0.5px 0 8px;
 }
 
 .promotion span {
@@ -1135,12 +1135,16 @@ h1 {
     font-size: 1.4em;
   }
 
+  .navbar .logo {
+    height: calc(70% - 5px);
+  }
+
   .hero {
     height: auto;
   }
 
   .promotion p {
-    font-size: .85em;
+    font-size: 0.85em;
   }
 
   .wrap-dim .wrap-blur {
