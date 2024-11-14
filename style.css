@@ -343,6 +343,10 @@ h1 {
   width: calc(50% - 47px);
 }
 
+.section1-wrap h3 {
+  margin-top: 24px;
+}
+
 .section3-wrap .right-down {
   padding-left: 47px;
   padding-right: 0;
@@ -363,17 +367,6 @@ h1 {
 .section3 p,
 .section4 p {
   font-size: 1.1em;
-}
-
-.section1 .text-wrap {
-  margin-top: 30px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.section1 .text-l,
-.section1 .text-r {
-  width: 45%;
 }
 
 .section1 h3 {
@@ -1106,15 +1099,6 @@ h1 {
 
   .services-wrap .service-card {
     width: 75%;
-  }
-
-  .section1 .text-l {
-    margin-bottom: 30px;
-  }
-
-  .section1 .text-l,
-  .section1 .text-r {
-    width: 100%;
   }
 
   .section2 .card-wrap .card {
