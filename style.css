@@ -311,19 +311,26 @@ h1 {
 .section4,
 .section5 {
   padding: 96px 78px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   overflow: hidden;
   background-color: var(--light-second);
 }
 
+.service-detail,
 .section1,
 .section4 {
   padding: 96px 78px;
+  box-sizing: border-box;
   display: flex;
+  background-color: var(--light);
+}
+
+.section1,
+.section4 {
   justify-content: center;
   overflow: hidden;
-  background-color: var(--light);
 }
 
 .section1-wrap,
@@ -398,12 +405,12 @@ h1 {
 }
 
 .service-card {
+  position: relative;
   border-radius: 15px;
   color: var(--light);
   height: 500px;
   overflow: hidden;
   width: 25%;
-  cursor: pointer;
 }
 
 .service-card .card-img,
@@ -432,6 +439,94 @@ h1 {
   height: 100%;
   min-width: 100%;
   object-fit: cover;
+}
+
+.service-card .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  cursor: pointer;
+}
+
+.service-card:hover .card-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.service-card .card-overlay button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 600;
+  padding: 10px 20px;
+  font-size: 16px;
+  transform: translate(-50%, -50%);
+  background-color: var(--light);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  opacity: 0;
+  scale: 0;
+  transform-origin: 0 0;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
+}
+
+.service-card:hover .card-overlay button {
+  opacity: 1;
+  scale: 1;
+}
+
+.service-detail {
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.5);
+  transform-origin: 0 0;
+  transition: all 0.1s ease;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100% - 82px);
+  background-color: var(--light);
+  z-index: 9;
+  color: var(--dark);
+}
+
+.scrollable {
+  overflow: scroll;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.show-detail .service-detail {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: initial;
+  transition: all 0.1s ease;
+  z-index: 9;
+}
+
+.service-detail .close-btn {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  width: 22px;
+  cursor: pointer;
+  margin: 0;
+  user-select: none;
 }
 
 .services,
@@ -706,7 +801,6 @@ h1 {
 
 .chatbot img {
   width: 38px;
-  height: 45px;
   margin: 0 10px 2px 0;
   align-self: flex-end;
 }
@@ -797,8 +891,8 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
   background-color: var(--light);
   z-index: 999;
@@ -947,7 +1041,7 @@ h1 {
   }
 
   .section4-wrap .left-up {
-    width: calc(100vw - 156px);
+    width: 100%;
     padding: 0;
   }
 
@@ -1083,11 +1177,18 @@ h1 {
     width: calc(100% - 112px);
   }
 
+  .service-detail .close-btn {
+    right: 30px;
+    top: 30px;
+    width: 22px;
+  }
+
   .section1-wrap .text-wrap {
     display: flex;
     flex-direction: column;
   }
 
+  .service-detail,
   .section1,
   .services,
   .section2,
