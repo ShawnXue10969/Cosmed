@@ -90,19 +90,23 @@ fetch("./answers.json")
   });
 
 const serviceCards = document.getElementsByClassName("service-card");
+const serviceDetail = document.querySelector(".service-detail");
+const closeService = document.querySelector(".close-service");
+
 for (let card of serviceCards) {
   let overlay = card.lastElementChild;
-  let close = card.querySelector(".close-btn");
 
   overlay.addEventListener("click", () => {
-    card.classList.toggle("show-detail");
+    document.body.classList.toggle("show-detail");
     document.body.classList.toggle("no-scroll");
-  });
-  close.addEventListener("click", () => {
-    card.classList.toggle("show-detail");
-    document.body.classList.toggle("no-scroll");
+    console.log(serviceCards.indexOf(card));
   });
 }
+
+closeService.addEventListener("click", () => {
+  document.body.classList.toggle("show-detail");
+  document.body.classList.toggle("no-scroll");
+});
 
 $(".owl-carousel").owlCarousel({
   items: 1,
