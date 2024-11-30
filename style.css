@@ -535,8 +535,9 @@ h1 {
   max-width: 1440px;
 }
 
-.services .service-detail h1 {
+.service-detail h1 {
   text-align: start;
+  margin-bottom: 28px;
 }
 
 .service-detail .detail-item {
