@@ -3,6 +3,11 @@ const sendChatBtn = document.querySelector(".chat-input img");
 const chatBox = document.querySelector(".chatbox");
 const chatToggler = document.querySelector(".chatbot-toggler");
 const closeBtn = document.querySelector(".close-btn");
+const logo = document.querySelector(".logo");
+
+logo.addEventListener("click", () =>
+  document.body.classList.remove("show-detail", "no-scroll", "show-chatbot")
+);
 
 fetch("./answers.json")
   .then((res) => res.json())
