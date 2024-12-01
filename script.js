@@ -98,16 +98,48 @@ const serviceCards = document.getElementsByClassName("service-card");
 const serviceDetail = document.querySelector(".service-detail");
 const closeService = document.querySelector(".close-service");
 const serviceCategories = serviceDetail.getElementsByClassName("category");
+const nav = document.querySelector(".navbar");
+const navCategories = nav.getElementsByClassName("category");
+const navServices = nav.getElementsByTagName("li");
+const detailItems = serviceDetail.getElementsByClassName("detail-item");
 
 for (i = 0; i < serviceCards.length; i++) {
   let categoryIndex = i;
   let card = serviceCards[i];
   let overlay = card.lastElementChild;
+  let navCategory = navCategories[i];
 
   overlay.addEventListener("click", () => {
     document.body.classList.toggle("show-detail");
     document.body.classList.toggle("no-scroll");
     serviceCategories[categoryIndex].scrollIntoView();
+  });
+
+  navCategory.addEventListener("click", (event) => {
+    if (event.currentTarget === event.target) {
+      if (document.body.classList.contains("show-detail")) {
+        serviceCategories[categoryIndex].scrollIntoView();
+      } else {
+        document.body.classList.toggle("show-detail");
+        document.body.classList.toggle("no-scroll");
+        serviceCategories[categoryIndex].scrollIntoView();
+      }
+    }
+  });
+}
+
+for (i = 0; i < navServices.length; i++) {
+  let serviceIndex = i;
+  let serviceBtn = navServices[i];
+
+  serviceBtn.addEventListener("click", () => {
+    if (document.body.classList.contains("show-detail")) {
+      detailItems[serviceIndex].scrollIntoView();
+    } else {
+      document.body.classList.toggle("show-detail");
+      document.body.classList.toggle("no-scroll");
+      detailItems[serviceIndex].scrollIntoView();
+    }
   });
 }
 

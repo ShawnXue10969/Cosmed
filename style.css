@@ -86,7 +86,8 @@ h1 {
   display: flex;
   align-items: center;
   font-size: 0.85em;
-  height: 52px;
+  padding: 26px;
+  box-sizing: border-box;
 }
 
 .navbar .category .dropdown {
@@ -98,7 +99,7 @@ h1 {
   min-width: 210px;
   position: absolute;
   transition: all 0.3s ease;
-  top: 50px;
+  top: 66px;
   border-radius: 6px;
   left: 0;
   overflow: hidden;
