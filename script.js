@@ -92,14 +92,17 @@ fetch("./answers.json")
 const serviceCards = document.getElementsByClassName("service-card");
 const serviceDetail = document.querySelector(".service-detail");
 const closeService = document.querySelector(".close-service");
+const serviceCategories = serviceDetail.getElementsByClassName("category");
 
-for (let card of serviceCards) {
+for (i = 0; i < serviceCards.length; i++) {
+  let categoryIndex = i;
+  let card = serviceCards[i];
   let overlay = card.lastElementChild;
 
   overlay.addEventListener("click", () => {
     document.body.classList.toggle("show-detail");
     document.body.classList.toggle("no-scroll");
-    console.log(serviceCards.indexOf(card));
+    serviceCategories[categoryIndex].focus();
   });
 }
 
