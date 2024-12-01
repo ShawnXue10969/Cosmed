@@ -102,7 +102,7 @@ for (i = 0; i < serviceCards.length; i++) {
   overlay.addEventListener("click", () => {
     document.body.classList.toggle("show-detail");
     document.body.classList.toggle("no-scroll");
-    serviceCategories[categoryIndex].focus();
+    serviceCategories[categoryIndex].scrollIntoView();
   });
 }
 
