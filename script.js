@@ -7,19 +7,6 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 function addAnimation() {
   // add data-animated="true" to every `.scroller` on the page
   scroller.setAttribute("data-animated", true);
-
-  // Make an array from the elements within `.scroller-inner`
-  const scrollerInner = scroller.querySelector(".scroller__inner");
-  const scrollerContent = Array.from(scrollerInner.children);
-
-  // For each item in the array, clone it
-  // add aria-hidden to it
-  // add it into the `.scroller-inner`
-  scrollerContent.forEach((item) => {
-    const duplicatedItem = item.cloneNode(true);
-    duplicatedItem.setAttribute("aria-hidden", true);
-    scrollerInner.appendChild(duplicatedItem);
-  });
 }
 
 const chatInput = document.querySelector(".chat-input textarea");
@@ -118,7 +105,8 @@ fetch("./answers.json")
     });
   });
 
-const serviceCards = document.getElementsByClassName("service-card");
+const services = document.querySelector(".services");
+const serviceCards = services.getElementsByTagName("li");
 const serviceDetail = document.querySelector(".service-detail");
 const closeService = document.querySelector(".close-service");
 const serviceCategories = serviceDetail.getElementsByClassName("category");
@@ -126,27 +114,34 @@ const nav = document.querySelector(".navbar");
 const navCategories = nav.getElementsByClassName("category");
 const navServices = nav.getElementsByTagName("li");
 const detailItems = serviceDetail.getElementsByClassName("detail-item");
+let categoryIndex = -1;
 
 for (i = 0; i < serviceCards.length; i++) {
-  let categoryIndex = i;
-  let card = serviceCards[i];
-  let overlay = card.lastElementChild;
-  let navCategory = navCategories[i];
+  if (categoryIndex < 3) {
+    categoryIndex++;
+  } else {
+    categoryIndex -= 3;
+  }
 
-  overlay.addEventListener("click", () => {
+  console.log(categoryIndex);
+  let card = serviceCards[i];
+  let navCategory = navCategories[categoryIndex];
+  let currentIndex = categoryIndex;
+
+  card.addEventListener("click", () => {
     document.body.classList.toggle("show-detail");
     document.body.classList.toggle("no-scroll");
-    serviceCategories[categoryIndex].scrollIntoView();
+    serviceCategories[currentIndex].scrollIntoView();
   });
 
   navCategory.addEventListener("click", (event) => {
     if (event.currentTarget === event.target) {
       if (document.body.classList.contains("show-detail")) {
-        serviceCategories[categoryIndex].scrollIntoView();
+        serviceCategories[currentIndex].scrollIntoView();
       } else {
         document.body.classList.toggle("show-detail");
         document.body.classList.toggle("no-scroll");
-        serviceCategories[categoryIndex].scrollIntoView();
+        serviceCategories[currentIndex].scrollIntoView();
       }
     }
   });

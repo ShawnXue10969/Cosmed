@@ -491,7 +491,7 @@ h1 {
   padding: 28px 24px;
   width: 180px;
   background: var(--light);
-  border-radius: 0.5rem;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 500;
 }
