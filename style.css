@@ -524,87 +524,10 @@ h1 {
   }
 }
 
-.service-card {
-  position: relative;
-  border-radius: 15px;
-  color: var(--light);
-  height: 500px;
-  overflow: hidden;
-  width: 25%;
-}
-
-.service-card .card-img,
-.service-card .card-content {
-  height: 70%;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.service-card .card-content {
-  justify-content: flex-start;
-  height: calc(30% - 50px);
-  padding: 25px 25px;
-  background-color: var(--dark);
-}
-
-.service-card .card-content h1 {
-  text-align: left;
-  margin: 0;
-  line-height: 1.1em;
-}
-
-.detail-img img,
-.service-card .card-img img {
+.detail-img img {
   height: 100%;
   min-width: 100%;
   object-fit: cover;
-}
-
-.service-card .card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  cursor: pointer;
-}
-
-.service-card:hover .card-overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.service-card .card-overlay button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-weight: 600;
-  padding: 10px 20px;
-  font-size: 16px;
-  transform: translate(-50%, -50%);
-  background-color: var(--light);
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  opacity: 0;
-  scale: 0;
-  transform-origin: 0 0;
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s;
-}
-
-.service-card:hover .card-overlay button {
-  opacity: 1;
-  scale: 1;
 }
 
 .service-detail {
@@ -641,14 +564,15 @@ h1 {
   z-index: 9;
 }
 
-.service-detail .close-service {
-  position: absolute;
+.close-service {
+  position: fixed;
   right: 50px;
-  top: 50px;
+  top: 80px;
   width: 22px;
   cursor: pointer;
   margin: 0;
   user-select: none;
+  z-index: 10;
 }
 
 .service-detail .detail-wrap {
@@ -702,7 +626,12 @@ h1 {
   align-items: center;
 }
 
-.services h1,
+.services h1 {
+  max-width: 852px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
 .section2 h1 {
   max-width: 852px;
   text-align: center;
@@ -1342,7 +1271,7 @@ h1 {
     width: calc(100% - 112px);
   }
 
-  .service-detail .close-service {
+  .close-service {
     right: 30px;
     top: 30px;
     width: 22px;
