@@ -556,8 +556,7 @@ h1 {
   overflow: hidden;
 }
 
-.show-detail .service-detail
- {
+.show-detail .service-detail {
   opacity: 1;
   transform: scale(1);
   pointer-events: initial;
@@ -565,8 +564,7 @@ h1 {
   z-index: 9;
 }
 
-.show-detail .close-service
- {
+.show-detail .close-service {
   opacity: 1;
   z-index: 10;
 }
@@ -1174,6 +1172,17 @@ h1 {
     font-size: 1.8em;
   }
 
+  .navbar .categories {
+    display: flex;
+    gap: 0;
+    width: 70%;
+    font-weight: 500;
+  }
+
+  .navbar .category {
+    padding: 26px 12px;
+  }
+
   .section1-wrap .left-up,
   .section3-wrap .right-down {
     width: calc(55% - 30px);
@@ -1270,9 +1279,40 @@ h1 {
     font-size: 1.6em;
   }
 
+  .nav-container {
+    padding: 0;
+  }
+
   .navbar {
     padding: 5px 25px;
-    width: calc(100% - 50px);
+  }
+
+  .navbar .categories {
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: var(--light);
+  }
+
+  .navbar .category {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    line-height: 46px;
+  }
+
+  .navbar .category .dropdown {
+    position: initial;
+    width: 100%;
+    border-radius: 0;
+    background-color: var(--light-second);
+    line-height: 18px;
+  }
+
+  .navbar .category .dropdown li {
+    text-align: center;
   }
 
   .wrap-dim .wrap-blur {
@@ -1323,7 +1363,7 @@ h1 {
   }
 
   .navbar .logo {
-    height: calc(70% - 5px);
+    height: calc(80% - 5px);
   }
 
   .hero {
