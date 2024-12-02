@@ -123,7 +123,6 @@ for (i = 0; i < serviceCards.length; i++) {
     categoryIndex -= 3;
   }
 
-  console.log(categoryIndex);
   let card = serviceCards[i];
   let navCategory = navCategories[categoryIndex];
   let currentIndex = categoryIndex;
