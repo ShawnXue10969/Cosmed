@@ -211,3 +211,11 @@ $(".scrollable").on("DOMMouseScroll mousewheel", function (ev) {
     return prevent();
   }
 });
+
+const hamburger = nav.querySelector(".hamburger");
+const categories = nav.querySelector(".categories");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  categories.classList.toggle("showing");
+});

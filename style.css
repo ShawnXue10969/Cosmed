@@ -104,6 +104,8 @@ h1 {
   left: 0;
   overflow: hidden;
   display: none;
+  font-weight: 400;
+  border: var(--dark) 3px solid;
 }
 
 .navbar .category .dropdown li {
@@ -155,6 +157,39 @@ h1 {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: width, left;
+}
+
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hamburger {
+  cursor: pointer;
+  padding: 8px;
+  display: none;
+}
+
+.bar {
+  width: 28px;
+  height: 3px;
+  background-color: var(--dark);
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+/* Add styles for an "active" state (when the menu is open) - Example */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-6px, -6px);
 }
 
 .hero {
@@ -526,6 +561,7 @@ h1 {
 
 .detail-img img {
   height: 100%;
+  width: 100%;
   min-width: 100%;
   object-fit: cover;
 }
@@ -599,10 +635,6 @@ h1 {
 
 .detail-img {
   width: 35%;
-}
-
-.detail-img img {
-  width: 100%;
 }
 
 .detail-txt {
@@ -1204,6 +1236,26 @@ h1 {
 }
 
 @media only screen and (max-width: 992px) {
+  .detail-item {
+    flex-direction: column;
+  }
+
+  .detail-img {
+    width: 100%;
+    height: 320px;
+  }
+
+  .detail-img img {
+    height: 100%;
+  }
+
+  .detail-txt {
+    width: 100%;
+    padding: 23px 46px;
+    margin-top: 20px;
+    box-sizing: border-box;
+  }
+
   .section1-wrap,
   .section3-wrap,
   .section5-wrap {
@@ -1288,12 +1340,21 @@ h1 {
   }
 
   .navbar .categories {
+    display: none;
     flex-direction: column;
     position: absolute;
+    height: 0;
     top: 72px;
     left: 0;
     width: 100%;
     background-color: var(--light);
+    transition: all 0.3s ease;
+  }
+
+  .navbar .categories.showing {
+    display: inline-block;
+    height: auto;
+    transition: all 0.3s ease;
   }
 
   .navbar .category {
@@ -1313,6 +1374,10 @@ h1 {
 
   .navbar .category .dropdown li {
     text-align: center;
+  }
+
+  .hamburger {
+    display: inline-block;
   }
 
   .wrap-dim .wrap-blur {
@@ -1385,6 +1450,10 @@ h1 {
 
   .contact {
     margin-top: 50px;
+  }
+
+  .detail-img {
+    height: 180px;
   }
 
   .section1-wrap {
