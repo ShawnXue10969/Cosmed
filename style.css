@@ -251,11 +251,13 @@ h1 {
 .wrap-dim h1 {
   font-size: 3.2em;
   margin-bottom: 15px;
+  max-width: 720px;
 }
 
 .hero-text {
   font-size: 1em;
   margin-bottom: 46px;
+  max-width: 1020px;
 }
 
 .hero .btn-wrap {
@@ -1127,6 +1129,11 @@ h1 {
 @media only screen and (min-width: 2560px) {
   .wrap-dim .wrap-blur {
     align-items: flex-end;
+  }
+
+  .wrap-dim h1,
+  .hero-text {
+    text-align: end;
   }
 }
 
