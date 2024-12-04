@@ -1,3 +1,13 @@
+function removeLoader() {
+  $(".loader").fadeOut(500, function () {
+    $(".loader").hide();
+  });
+}
+
+$(document).ready(function () {
+  setTimeout(removeLoader, 0);
+});
+
 const scroller = document.querySelector(".scroller");
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
