@@ -384,6 +384,10 @@ background: linear-gradient(120deg, rgba(248,247,255,1) 0%, rgba(240,240,248,1) 
   gap: 8px;
 }
 
+.contact a {
+  text-decoration: none;
+}
+
 .contact::before {
   display: block;
   content: " ";
